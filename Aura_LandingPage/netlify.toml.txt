@@ -1,0 +1,12 @@
+[build]
+  # Remove qualquer comando de build que possa estar causando erro
+  command = ""
+  # O ponto final garante que o Netlify publique a pasta que você arrastou
+  publish = "."
+
+# ESTA REGRA É CRÍTICA PARA RESOLVER O ERRO 404 (Page not found)
+# Diz ao Netlify para sempre servir o index.html, mesmo que o caminho seja '/'
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

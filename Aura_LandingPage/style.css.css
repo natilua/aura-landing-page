@@ -1,0 +1,140 @@
+:root {
+    /* Cores extraídas da sua logo: */
+    --cor-principal-fundo: #17243b; /* Azul Escuro do Background */
+    --cor-acento-claro: #48a6d4;   /* Azul Ciano (Elementos de IA) */
+    --cor-texto-claro: #f0f0f0;    /* Branco/Cinza Claro para o Texto */
+    --cor-card-fundo: #233550;     /* Um tom um pouco mais claro para os cards */
+}
+
+/* --- ESTILOS GERAIS --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-principal-fundo);
+    color: var(--cor-texto-claro);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.logo {
+    max-width: 250px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+    flex-grow: 1; /* Ocupa o espaço restante */
+}
+
+h1 {
+    color: var(--cor-acento-claro);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* --- CARDS DE PRODUTOS --- */
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--cor-card-fundo);
+    border: 1px solid var(--cor-acento-claro);
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 250px; /* Permite que os cards se adaptem ao tamanho da tela */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card h2 {
+    color: var(--cor-acento-claro);
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+/* --- BOTÃO DE CHAMADA À AÇÃO (CTA) --- */
+button {
+    background-color: var(--cor-acento-claro);
+    color: var(--cor-principal-fundo);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #79c7ee; /* Um tom mais claro do ciano */
+}
+
+/* --- WIDGET DO CHATBOT (ASIDE) --- */
+aside {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Opcional: Estilo para o iframe, se precisar */
+aside iframe {
+    border: none;
+    border-radius: 15px;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border-top: 1px solid var(--cor-card-fundo);
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+/* --- MEDIA QUERIES (Responsividade) --- */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .product-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        flex: 1 1 90%;
+        max-width: 300px;
+    }
+    aside {
+        right: 10px;
+        bottom: 10px;
+    }
+}
